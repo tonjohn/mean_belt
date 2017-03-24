@@ -5,6 +5,11 @@
     <h2>{{poll.question}}</h2>
     <p>Click the Vote button to choose one</p>
 
+    <div class="errors">
+        <p ng-repeat="error in errors">{{error.message}}</p>
+    </div>
+
+
     <table class="ui selectable celled table">
         <thead>
             <tr>

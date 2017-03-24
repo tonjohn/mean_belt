@@ -32,10 +32,17 @@ app.controller('pollController', ['$scope', '$routeParams', 'pollsFactory', 'use
 		};
 		pollsFactory.vote( $scope.poll._id, data, function ( data ) {
 			console.log("Vote reponse:", data);
-			$scope.poll = data;
+			if( !data.errors ){
+				$scope.poll = data;
+				$scope.curVote = option;
+			}
+			else
+			{
+				$scope.errors = data.errors;
+			}
 			
 		});
-		$scope.curVote = option;
+		
 	};
 	
 }]);

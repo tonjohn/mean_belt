@@ -53,8 +53,9 @@ module.exports = {
 			{
 				
 				PollVote.findOne({_user: req.body.data._user, _poll: req.body.data._poll}, function ( err, voteRecord ) {
+					console.log(err, voteRecord);
 					if( voteRecord ){
-						res.json({errors: {pollVote: { message: "You have already voted! You picked #" + voteRecord.vote}}})
+						res.json({errors: {pollVote: { message: "You have already voted! You picked #" + voteRecord.option}}})
 					}
 					else {
 						console.log(data[OPT]);

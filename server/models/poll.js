@@ -1,10 +1,10 @@
 console.log('polls model');
 var mongoose = require('mongoose');
 
-var PollVotesSchema = new mongoose.Schema({
+var PollVoteSchema = new mongoose.Schema({
 	_user: { type: mongoose.Schema.ObjectId, ref:"User"},
 	_poll: { type: mongoose.Schema.ObjectId, ref:"Poll"},
-	vote: { type: String}
+	option: { type: String}
 });
 
 var PollSchema = new mongoose.Schema({
@@ -21,4 +21,4 @@ var PollSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 var Poll = mongoose.model('Poll', PollSchema);
-var PollVote = mongoose.model('PollVote', PollSchema);
+var PollVote = mongoose.model('PollVote', PollVoteSchema);
