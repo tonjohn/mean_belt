@@ -1,0 +1,48 @@
+<html ng-app="myApp">
+<head>
+    <title>MEAN Belt</title>
+    <link rel="icon"
+          type="image/png"
+          href="http://tonjohn.com/favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.8/semantic.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.8/semantic.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        header {
+            text-align: right;
+        }
+        div.errors {
+            padding: 5px;
+        }
+
+        div.errors > p {
+            border-left: 3px solid indianred;
+            padding-left: 3px;
+        }
+
+        input.ng-dirty.ng-invalid {
+            border: 2px solid indianred;
+        }
+    </style>
+
+    <script src="angular/angular.js"></script>
+    <script src="angular-route/angular-route.js"></script>
+    <script src="angular-cookies/angular-cookies.js"></script>
+
+    <!-- my Angular App -->
+    <script src="assets/app.js"></script>
+    <script src="assets/factories/usersFactory.js"></script>
+    <script src="assets/factories/pollsFactory.js"></script>
+    <script src="assets/controllers/loginController.js"></script>
+    <script src="assets/controllers/dashboardController.js"></script>
+    <script src="assets/controllers/createController.js"></script>
+    <script src="assets/controllers/pollController.js"></script>
+
+</head>
+<body>
+<main>
+    <section ng-view></section>
+</main>
+</body>
+</html>

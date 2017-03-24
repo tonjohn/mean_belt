@@ -1,0 +1,58 @@
+<header>
+    <a href="#!/dashboard">Go to Polls</a>
+</header>
+<div ng-controller="pollController">
+    <h2>{{poll.question}}</h2>
+    <p>Click the Vote button to choose one</p>
+
+    <table class="ui selectable celled table">
+        <thead>
+            <tr>
+                <th>
+                    Option
+                </th>
+                <th>
+                    Current Count of Votes
+                </th>
+                <th>
+                    Action
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>{{poll.option1}}</td>
+                <td>{{poll.option1_vote | number}}</td>
+                <td>
+                    <button ng-if="curUser._id && !curVote" ng-click="vote(1)">Vote</button>
+                    <span ng-show="curVote == 1">Your Vote</span>
+                </td>
+            </tr>
+            <tr>
+                <td>{{poll.option2}}</td>
+                <td>{{poll.option2_vote}}</td>
+                <td>
+                    <button ng-if="curUser._id && !curVote" ng-click="vote(2)">Vote</button>
+                    <span ng-show="curVote == 2">Your Vote</span>
+                </td>
+            </tr>
+            <tr>
+                <td>{{poll.option3}}</td>
+                <td>{{poll.option3_vote}}</td>
+                <td>
+                    <button ng-if="curUser._id && !curVote" ng-click="vote(3)">Vote</button>
+                    <span ng-show="curVote == 3">Your Vote</span>
+                </td>
+            </tr>
+            <tr>
+                <td>{{poll.option4}}</td>
+                <td>{{poll.option4_vote}}</td>
+                <td>
+                    <button ng-if="curUser._id && !curVote" ng-click="vote(4)">Vote</button>
+                    <span ng-show="curVote == 4">Your Vote</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

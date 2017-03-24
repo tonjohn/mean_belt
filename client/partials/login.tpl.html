@@ -1,0 +1,15 @@
+<div class="errors">
+    <p ng-repeat="error in errors">{{error.message}}</p>
+</div>
+
+<div id="login">
+    <form name="loginForm" ng-submit="login()">
+        <div>
+            <label for="name">Your Name:</label>
+            <input id="name" type='text' name='name' placeholder="Jack" ng-model="user.name">
+        </div>
+        <div class="submit">
+            <input name='action' type="submit" value="Login">
+        </div>
+    </form>
+</div>

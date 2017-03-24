@@ -1,0 +1,48 @@
+<header>
+    <a ng-show="curUser._id" href="#!/create">Create a New Poll</a>
+    | <a href="" ng-show="curUser._id" ng-click="logout()">Logout ({{curUser.name}})</a>
+    <a href="#!/" ng-hide="curUser._id">Login</a></a>
+</header>
+<h2>Current Polls</h2>
+<div ng-controller="dashboardController">
+    <input type="text" placeholder="search..." ng-model="searchPoll">
+    <table class="ui selectable celled table">
+        <thead>
+            <tr>
+                <th>
+                    <a href="#!/dashboard" ng-click="sortType = 'name'; sortReverse = !sortReverse">
+                        Name
+                        <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down">&#9660;</span>
+                        <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up">&#9650;</span>
+                    </a>
+                </th>
+                <th>
+                    <a href="#!/dashboard" ng-click="sortType = 'question'; sortReverse = !sortReverse">
+                        Survey Question
+                        <span ng-show="sortType == 'question' && !sortReverse" class="fa fa-caret-down">&#9660;</span>
+                        <span ng-show="sortType == 'question' && sortReverse" class="fa fa-caret-up">&#9650;</span>
+                    </a>
+                </th>
+                <th>
+                    <a href="#!/dashboard" ng-click="sortType = 'createdAt'; sortReverse = !sortReverse">
+                        Date Posted
+                        <span ng-show="sortType == 'createdAt' && !sortReverse" class="fa fa-caret-down">&#9660;</span>
+                        <span ng-show="sortType == 'createdAt' && sortReverse" class="fa fa-caret-up">&#9650;</span>
+                    </a>
+                </th>
+                <th>
+                    Action
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr ng-repeat="poll in polls | orderBy:sortType:sortReverse | filter:searchPoll">
+                <td>{{ poll.name }}</td>
+                <td><a href="#!/poll/{{poll._id}}">{{ poll.question }}</a></td>
+                <td>{{ poll.createdAt | date:'longDate' }}</td>
+                <td ng-if="poll.name == curUser.name"><a ng-click="delete(poll._id)">Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

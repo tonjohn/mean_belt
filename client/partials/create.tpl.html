@@ -1,0 +1,34 @@
+<header>
+    <a href="#!/dashboard">Cancel</a>
+</header>
+<h2>Put the question and options here:</h2>
+<section ng-controller="createController" id="login">
+    <div class="errors">
+        <p ng-repeat="error in errors">{{error.message}}</p>
+    </div>
+    <form name="pollForm" ng-submit="create()">
+        <div>
+            <label for="question">Question:</label>
+            <input id="question" type='text' name='question' placeholder="How many licks does it take to get to the center of a tootsie pop?" ng-model="poll.question" required minlength="8">
+        </div>
+        <div>
+            <label for="option1">Option 1:</label>
+            <input id="option1" type='text' name='option1' placeholder="One" ng-model="poll.option1" required minlength="3">
+        </div>
+        <div>
+            <label for="option2">Option 2:</label>
+            <input id="option2" type='text' name='option2' placeholder="Two" ng-model="poll.option2" required minlength="3">
+        </div>
+        <div>
+            <label for="option3">Option 3:</label>
+            <input id="option3" type='text' name='option3' placeholder="Three" ng-model="poll.option3" required minlength="3">
+        </div>
+        <div>
+            <label for="option4">Option 4:</label>
+            <input id="option4" type='text' name='option4' placeholder="Four" ng-model="poll.option4" required minlength="1">
+        </div>
+        <div class="submit">
+            <input class="ui submit button" name='action' type="submit" value="Create Poll" ng-disabled="pollForm.$invalid">
+        </div>
+    </form>
+</section>
