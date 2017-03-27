@@ -36,7 +36,7 @@ app.factory('pollsFactory', ['$http', function ( $http ) {
 	
 	factory.delete = function ( id, callback ) {
 		
-		$http.delete('/poll/' + id).then( function ( res ) {
+		$http.delete('/polls/' + id).then( function ( res ) {
 			console.log('Delete Response:', res);
 			if( typeof(callback) == 'function')
 			{

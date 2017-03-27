@@ -41,7 +41,7 @@
                 <td>{{ poll.name }}</td>
                 <td><a href="#!/poll/{{poll._id}}">{{ poll.question }}</a></td>
                 <td>{{ poll.createdAt | date:'longDate' }}</td>
-                <td ng-if="poll.name == curUser.name"><a ng-click="delete(poll._id)">Delete</a></td>
+                <td ng-if="poll.name == curUser.name"><a href="" ng-click="delete(poll._id)">Delete</a></td>
             </tr>
         </tbody>
     </table>

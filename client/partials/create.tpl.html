@@ -10,22 +10,27 @@
         <div>
             <label for="question">Question:</label>
             <input id="question" type='text' name='question' placeholder="How many licks does it take to get to the center of a tootsie pop?" ng-model="poll.question" required minlength="8">
+            <p ng-show="pollForm.question.$invalid && pollForm.question.$touched" class="help-block">This field is required and must be at least 8 characters</p>
         </div>
         <div>
             <label for="option1">Option 1:</label>
             <input id="option1" type='text' name='option1' placeholder="One" ng-model="poll.option1" required minlength="3">
+            <p ng-show="pollForm.option1.$invalid && pollForm.option1.$touched" class="help-block">This field is required and must be at least 3 characters</p>
         </div>
         <div>
             <label for="option2">Option 2:</label>
             <input id="option2" type='text' name='option2' placeholder="Two" ng-model="poll.option2" required minlength="3">
+            <p ng-show="pollForm.option2.$invalid && pollForm.option2.$touched" class="help-block">This field is required and must be at least 3 characters</p>
         </div>
         <div>
             <label for="option3">Option 3:</label>
             <input id="option3" type='text' name='option3' placeholder="Three" ng-model="poll.option3" required minlength="3">
+            <p ng-show="pollForm.option3.$invalid && pollForm.option3.$touched" class="help-block">This field is required and must be at least 3 characters</p>
         </div>
         <div>
             <label for="option4">Option 4:</label>
-            <input id="option4" type='text' name='option4' placeholder="Four" ng-model="poll.option4" required minlength="1">
+            <input id="option4" type='text' name='option4' placeholder="Four" ng-model="poll.option4" required minlength="3">
+            <p ng-show="pollForm.option4.$invalid && pollForm.option4.$touched" class="help-block">This field is required and must be at least 3 characters</p>
         </div>
         <div class="submit">
             <input class="ui submit button" name='action' type="submit" value="Create Poll" ng-disabled="pollForm.$invalid">
